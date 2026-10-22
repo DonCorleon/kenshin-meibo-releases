@@ -4,7 +4,7 @@
 
 The dojo register for **Kenshin Karate Langwarrin**: student check-in on the touch screen, student records, gradings, the timetable, reports and backups.
 
-**[Download the latest version](https://github.com/DonCorleon/kenshin-meibo-releases/releases/latest)** (Windows, currently 0.2.0). New versions also install themselves from inside the program: see [Updates](#updates).
+**[Download the latest version](https://github.com/DonCorleon/kenshin-meibo-releases/releases/latest)** (Windows, currently 0.2.1). New versions also install themselves from inside the program: see [Updates](#updates).
 
 This page holds the downloads and the help. Every picture uses made-up students. The same help is inside the program under **Help**.
 
@@ -768,7 +768,7 @@ Kenshin Meibo checks for a new version a minute after it starts, then every 6 ho
 ### Installing
 
 1. Go to **Settings → Updates**. It shows what's new in that version.
-2. Pick a time between classes, then click **Install version …**.
+2. Pick a time between classes, then click **Install version …**, and **OK** to confirm.
 
 ![Settings → Updates](images/settings-updates.webp)
 
