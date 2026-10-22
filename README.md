@@ -4,7 +4,7 @@
 
 The dojo register for **Kenshin Karate Langwarrin**: student check-in on the touch screen, student records, gradings, the timetable, reports and backups.
 
-**[Download the latest version](https://github.com/DonCorleon/kenshin-meibo-releases/releases/latest)** (Windows, currently 0.2.1). New versions also install themselves from inside the program: see [Updates](#updates).
+**[Download the latest version](https://github.com/DonCorleon/kenshin-meibo-releases/releases/latest)** (Windows, currently 0.3.0). New versions also install themselves from inside the program: see [Updates](#updates).
 
 This page holds the downloads and the help. Every picture uses made-up students. The same help is inside the program under **Help**.
 
@@ -33,8 +33,10 @@ This page holds the downloads and the help. Every picture uses made-up students.
 - [Find a student](#find-a-student): Search by name, number or phone, and narrow the list.
 - [Add a new student](#add-a-new-student): One page. Only first name and surname are required.
 - [Change a student's details or photo](#change-a-students-details-or-photo): Open the student, change what you need, save.
+- [Notes about a student](#notes-about-a-student): A dated list of notes on each student, newest first, with who wrote each one.
 - [Medical details](#medical-details): Allergies, conditions and medications, and where they show up.
 - [Parents, emergency contacts and families](#parents-emergency-contacts-and-families): Who to call, and linking brothers and sisters so they check in together.
+- [Change several students at once](#change-several-students-at-once): Tick students on the list, then print them, add them to a grading, move group or mark as left.
 - [When a student leaves](#when-a-student-leaves): Mark them as not enrolled. Their history is kept in case they come back.
 - [Attendance and history](#attendance-and-history): Classes attended, month by month, and what the old program had.
 
@@ -59,7 +61,7 @@ This page holds the downloads and the help. Every picture uses made-up students.
 - [Forgotten password](#forgotten-password): Use another login, the printed recovery code, or call Don.
 - [Backups](#backups): Where backups go, how often, and what the warnings mean.
 - [Back up to a USB stick](#back-up-to-a-usb-stick): Set the stick up once. After that, plugging it in asks to back up.
-- [Get data back from a backup](#get-data-back-from-a-backup): Put an earlier backup back, for example after the PC fails.
+- [Get data back from a backup](#get-data-back-from-a-backup): Put an earlier backup back, from Settings → Backups. It can be undone.
 - [Choose which screen does what](#choose-which-screen-does-what): Which monitor shows the main screen and which shows check-in.
 - [Updates](#updates): New versions show up by themselves and install with one click.
 - [Moving to a new PC](#moving-to-a-new-pc): Copy one folder, log in. Nothing is tied to the old PC.
@@ -102,6 +104,7 @@ The first screen asks how to start:
 
 - **Bring in the old CASMS data**: point it at the old CASMS folder. Every student keeps their number, and nothing is left behind.
 - **Start empty**: an empty register.
+- **Bring back a Kenshin Meibo backup**: for a new PC. See [Moving to a new PC](#moving-to-a-new-pc).
 - **Demo with made-up students**: for trying things out.
 
 Then enter **your name**, a **username** and a **password** of at least 8 characters. This becomes the first login.
@@ -306,6 +309,20 @@ The change is recorded in the change log, so it's always clear who changed what.
 
 ### Find a student
 
+### From any page: quick find
+
+The **Find a student…** box at the top of the menu works on every page. Click it, or press **Ctrl+K**, and start typing a name, a student number or a phone number.
+
+![Quick find](images/quickfind.webp)
+
+- Click a student to open them, or use the arrow keys and press **Enter**.
+- Type a number and press **Enter** to go straight to that student.
+- Press **Esc** to close it.
+
+Current students are listed before students who've left.
+
+### The student list
+
 Click **Students** in the menu.
 
 ![The student list](images/students.webp)
@@ -317,6 +334,17 @@ Click **Students** in the menu.
   - a rank
   - **Has medical info**, **No social media**, **Pays cash** or **No emergency phone**
 - Click anyone to open their record.
+
+### Sorting
+
+Click a column heading to sort by it, for example **Age** or **Rank**. Click it again to reverse the order. A small arrow shows which column is sorted and which way:
+
+- ▲ means lowest first: A to Z, youngest first, White belt first, oldest date first.
+- ▼ means the other way round.
+
+Sorting goes by meaning, not by the letters. **Rank** follows the belt order, and **Age** goes by date of birth. Students with nothing in that column (no phone, never been to class) always go to the bottom.
+
+The order is kept while you work: open a student, go back, and the list is how you left it. It works together with the search and the filters, for example Juniors sorted by rank.
 
 The count above the list shows how many match. To print a list, use [Reports](#print-a-list-or-save-it-to-excel).
 
@@ -335,6 +363,17 @@ The count above the list shows how many match. To print a list, use [Reports](#p
 - **Student number** is filled in with the next free number. That's what they type to check in, so tell them. You can change it if you prefer, as long as nobody else has it.
 - New students start on **White** and **Direct Debit**. Change either if needed.
 - **Waiver / consent form signed** and **Photos on social media** are asked here so they don't get forgotten. Leave media as *Not asked yet* until you know.
+
+### "Already here?"
+
+When you type a name, date of birth or phone, Kenshin Meibo checks whether that student might already be in the register. That's common with students coming back after a break. Matches show under the phone box straight away. If you still click **Add student**, it stops and asks:
+
+![Is this one of these students?](images/student-duplicate.webp)
+
+- **If it's them**, click their name. Open their record and tick **Currently enrolled**: they keep their old number, rank and history.
+- **If it's someone else**, for example two kids with the same name, click **It's a different person: add them**.
+
+It matches on the same name, the same surname or first name with the same date of birth, or the same first name and phone, and it includes students who have left. If something you typed is wrong, like a number already in use, the form keeps everything you typed.
 
 After adding, you land on their record. From there, add:
 
@@ -359,7 +398,7 @@ The tabs along the top hold everything else:
 
 | Tab | What's there |
 |---|---|
-| **Details** | Name, contact, membership, rank, notes, photo |
+| **Details** | Name, contact, membership, rank, [notes](#notes-about-a-student), photo |
 | **Family & contacts** | Parents and guardians, emergency contacts, brothers and sisters. See [Families](#parents-emergency-contacts-and-families). |
 | **Medical** | Allergies, conditions, medications. See [Medical details](#medical-details). |
 | **Gradings** | Every grading. See [One student's grading](#one-students-grading). |
@@ -378,6 +417,29 @@ The photo shows on the check-in screen when they bow in. Like everything else, i
 ### Rank
 
 You can change the rank here, but after a grading it's quicker to use [Grading day](#grading-day), which records it in their history as well.
+
+[↑ Contents](#contents)
+
+### Notes about a student
+
+Open the student. **Notes** is on the **Details** tab, below the details.
+
+![A student's notes](images/notes.webp)
+
+### Add a note
+
+Type it in the box and click **Add note**. It's saved with today's date and your name, at the top of the list. Notes build up over time, so you can see what's happened and when, for example an injury, a chat with a parent, or something to work on.
+
+### Change or delete a note
+
+- **Edit** opens the note for changing. Click **Save changes**, then **OK**. The note then shows when it was edited and by whom.
+- **Delete** removes the note after you click **OK**. It can't be undone.
+
+### Good to know
+
+- Notes that were in the old program, or in the earlier single notes box, are kept as the first note. They show "from CASMS" or "from the old notes box".
+- Notes never show on the check-in screen.
+- The change log records that a note was added, edited or deleted, but never what it says.
 
 [↑ Contents](#contents)
 
@@ -426,6 +488,26 @@ To unlink a student, click **Remove (name) from this family**. Nothing else abou
 
 [↑ Contents](#contents)
 
+### Change several students at once
+
+On the [student list](#find-a-student), tick the box at the start of each student you want. The box in the heading ticks everyone in the list as it's showing.
+
+A dark bar appears at the top saying how many are ticked:
+
+![Students ticked, ready to move to a group](images/bulk.webp)
+
+1. Choose what to do in the first box:
+   - **Print a list of them**: opens a Student list of just those students, ready to print or save to Excel.
+   - **Add them to a grading day**: choose the day, and they're added to its [grading sheet](#grading-day).
+   - **Move them to a group**: choose Kinda Kid, Junior or Adult.
+   - **Mark them as left**: see [When a student leaves](#when-a-student-leaves). Their history is kept.
+   - **Mark them as current students**: for students coming back.
+2. Click the button. Changes ask **"are you sure?"** first.
+
+Ticks stay while you search or sort, so you can tick students from several searches, then act on them all together. **Untick all** clears them.
+
+[↑ Contents](#contents)
+
 ### When a student leaves
 
 Students aren't deleted. Their attendance and gradings are part of the dojo's records, and many come back.
@@ -441,6 +523,8 @@ They disappear from the normal student list and from reports, but nothing is los
 - If they check in while not enrolled, they're let in but asked to see Sensei.
 
 Their number is never given to anyone else.
+
+If several students have left, tick them all on the student list and choose **Mark them as left**. See [Change several students at once](#change-several-students-at-once).
 
 [↑ Contents](#contents)
 
@@ -479,7 +563,7 @@ For the whole dojo, see the **Monthly attendance** and **Not seen lately** [repo
 
 ![Gradings](images/gradings.webp)
 
-3. Under **Add students**, tick who's grading. Students are listed by **classes since their last grading**, most first, so the ones who are due are at the top. Use **All groups** to show just Kinda Kids, Juniors or Adults.
+3. Under **Add students**, tick who's grading. Students are listed by **classes since their last grading**, most first, so the ones who are due are at the top. Use **All groups** to show just Kinda Kids, Juniors or Adults. The second box changes the order: **Name**, **Rank** or **Youngest first**.
 
 ![Ticking who's grading](images/grading-add.webp)
 
@@ -492,6 +576,7 @@ For the whole dojo, see the **Monthly attendance** and **Not seen lately** [repo
 - Each student shows their current rank and the **new rank**. The next rank is already filled in; change it if someone skips a rank.
 - Click **Pass** or **Not yet** for each student. Their rank changes there and then, and it's added to their history.
 - **Medal** and **notes** are optional, for anyone who needs a comment.
+- Click **Student**, **Now**, **New rank** or **Result** at the top of the sheet to sort it, for example by rank so each belt grades together. Click again to reverse.
 - If everyone left has passed, click **Pass everyone still to do**.
 
 ### Made a mistake?
@@ -615,7 +700,9 @@ Click **Reports** in the menu and pick one.
 
 ![A report](images/report.webp)
 
-- Narrow it with the choices above it (group, month, include inactive students), then click **Show**.
+- Narrow it with the choices above it (group, month, include inactive students).
+- **Sort it** by clicking a column heading, and click again to reverse. The arrow shows the order. **Student numbers** has **by name** and **by number** buttons instead.
+- **Print**, **Save as Excel** and **CSV** all use the order you chose.
 - **Print** prints it on A4. In the print window, choose your printer or **Save as PDF**.
 - **Save as Excel** downloads it as a spreadsheet with the logo, title and date at the top.
 - **CSV** is a plain list, for other programs.
@@ -678,14 +765,14 @@ Kenshin Meibo backs itself up. The first time someone logs in, it asks where to 
 
 - **Last backups** shows when each place was last backed up.
 - **On this PC** is always on. You can change the folder here.
-- **How often**: once a day (the default), every 4 hours, or once a week. It also backs up when the program is closed or locked, unless you untick that.
+- **How often**: once a day (the default), every 4 hours, or once a week. **Keep backups for** sets how far back you can go. It also backs up when the program is closed or locked, unless you untick that.
 - **USB drive**: a copy that can go home with you. See [Back up to a USB stick](#back-up-to-a-usb-stick).
 - **OneDrive**: a copy online, safe even if the PC is stolen or dies. Tick **Use**, check the folder, then click **Save**. OneDrive must be signed in on the PC: look for the cloud icon by the clock.
 - **Back up now**, at the top, makes a backup straight away.
 
 ### What's kept
 
-Everything from the last two days, then one backup a day for two weeks, then one a month for a year. Older ones are deleted, so the folder doesn't keep growing.
+Backups are kept for **2 weeks** unless you change **Keep backups for** (1 week up to 1 year). Older ones are deleted, so the folder doesn't keep growing. The newest backup is always kept, however old. Each backup is small, a few MB.
 
 ### Are backups safe to leave lying around?
 
@@ -699,7 +786,11 @@ A bar at the top of the main screen tells you if:
 - the last backup didn't work, for example because the USB stick was pulled out or OneDrive is signed out
 - there's been no backup for over a week
 
-Click the button in the bar to fix it. To get data back from a backup, see [Get data back from a backup](#get-data-back-from-a-backup).
+Click the button in the bar to fix it.
+
+### Getting data back
+
+**Restore from a backup**, at the bottom of this page, puts an earlier backup back. See [Get data back from a backup](#get-data-back-from-a-backup).
 
 [↑ Contents](#contents)
 
@@ -728,17 +819,30 @@ Other USB sticks, like a camera card, are ignored. Only sticks you've set up bri
 
 ### Get data back from a backup
 
-Ring Don first if you're unsure. Restoring replaces the current data with the backup's.
+Use this if something has gone badly wrong, for example lots of students changed by mistake, and you want everything back the way it was on an earlier day.
 
-1. Right-click the [icon by the clock](#the-icon-by-the-clock) and choose **Quit Kenshin Meibo**.
-2. Open the Kenshin Meibo folder. Rename the **Data** folder to **Data old**, so nothing is lost if you pick the wrong backup.
-3. Open your backup folder (Documents\Kenshin Meibo Backups, the USB stick, or OneDrive). Backups are named by date and time, like `Kenshin Meibo backup 2026-10-20 2150.zip`.
-4. Right-click the one you want and choose **Extract All…**. Extract it into the **Kenshin Meibo** folder. A new **Data** folder appears.
-5. Start Kenshin Meibo and log in with a password that worked **when that backup was made**, or the recovery code from that time.
+### Restore from inside Kenshin Meibo
 
-Anything entered after that backup was made, such as check-ins or new students, won't be there.
+1. Go to **Settings → Backups**. At the bottom, **Restore from a backup** lists the most recent backups from this PC, OneDrive and any plugged-in backup stick, newest first.
 
-Each backup has a **README.txt** inside with the same steps.
+   ![Backups ready to restore](images/restore-list.webp)
+
+2. Click **Restore…** next to the one you want. To use a backup from somewhere else, click **Choose a backup file…** instead.
+3. Check the date and number of students, then type a username and password **that worked when that backup was made**. If a password has been changed since, use the old one.
+
+   ![Restoring a backup](images/restore.webp)
+
+4. Click **Restore this backup**, then **OK**.
+
+A few seconds later you're back on Today, logged in, with everything as it was when that backup was made. Anything entered after that, such as check-ins or new students, won't be there.
+
+### Changed your mind?
+
+Before restoring, Kenshin Meibo backs up your data as it was, so the newest backup in the list is the one from just before you restored. Restore that one to undo. It also keeps a copy in a folder called **Data before restore** inside the Kenshin Meibo folder, for Don to use if needed.
+
+### On a new PC
+
+If the old PC has died, choose **Bring back a Kenshin Meibo backup** when setting up on the new one. See [Moving to a new PC](#moving-to-a-new-pc).
 
 [↑ Contents](#contents)
 
@@ -799,8 +903,12 @@ It's at the top of **Settings → Updates**. Click **Check now** to look for a n
 
 ### If the old PC has died
 
-1. On the new PC, [download and unzip Kenshin Meibo](#set-up-kenshin-meibo-on-a-pc), but **don't** run it yet.
-2. Take your latest backup from the USB stick or OneDrive, and follow [Get data back from a backup](#get-data-back-from-a-backup) from step 3.
+1. On the new PC, [download and unzip Kenshin Meibo](#set-up-kenshin-meibo-on-a-pc), and start it.
+2. On the setup screen, choose **Bring back a Kenshin Meibo backup**.
+3. Click **Browse…** and pick the newest backup from the USB stick or OneDrive, in the **Kenshin Meibo Backups** folder.
+4. Type a username and password that worked when that backup was made, then click **Bring back the backup**.
+
+Everything comes back as it was when that backup was made.
 
 Logins, passwords and the recovery code all move with the data. There's nothing to re-register.
 
@@ -852,7 +960,10 @@ See [Forgotten password](#forgotten-password).
 Everything, including photos and medical details, is in one encrypted file that can't be read without a password. Backups are encrypted too. The touch screen only shows names and ranks. Nothing is sent over the internet, except for OneDrive backups if you turn them on, and those are encrypted first.
 
 #### What if the PC dies?
-Your backups have everything. Install Kenshin Meibo on another PC and put the latest backup back. See [Moving to a new PC](#moving-to-a-new-pc).
+Your backups have everything. Install Kenshin Meibo on another PC and choose **Bring back a Kenshin Meibo backup** when it starts. See [Moving to a new PC](#moving-to-a-new-pc).
+
+#### Lots of things got changed by mistake. Can I go back?
+Yes: **Settings → Backups → Restore from a backup**. See [Get data back from a backup](#get-data-back-from-a-backup).
 
 #### Can it run on two computers at once?
 No. One PC runs it, with a main screen and a touch screen. To move it, see [Moving to a new PC](#moving-to-a-new-pc).
