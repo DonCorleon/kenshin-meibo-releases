@@ -4,7 +4,7 @@
 
 The dojo register for **Kenshin Karate Langwarrin**: student check-in on the touch screen, student records, gradings, the timetable, reports and backups.
 
-**[Download the latest version](https://github.com/DonCorleon/kenshin-meibo-releases/releases/latest)** (Windows, currently 0.3.0). New versions also install themselves from inside the program: see [Updates](#updates).
+**[Download the latest version](https://github.com/DonCorleon/kenshin-meibo-releases/releases/latest)** (Windows, currently 0.4.0). New versions also install themselves from inside the program: see [Updates](#updates).
 
 This page holds the downloads and the help. Every picture uses made-up students. The same help is inside the program under **Help**.
 
@@ -65,9 +65,12 @@ This page holds the downloads and the help. Every picture uses made-up students.
 - [Choose which screen does what](#choose-which-screen-does-what): Which monitor shows the main screen and which shows check-in.
 - [Updates](#updates): New versions show up by themselves and install with one click.
 - [Moving to a new PC](#moving-to-a-new-pc): Copy one folder, log in. Nothing is tied to the old PC.
+- [Update from CASMS](#update-from-casms): While CASMS is still in use, bring its latest students, changes and check-ins into Kenshin Meibo.
+- [Switching over from CASMS](#switching-over-from-casms): The day Kenshin Meibo takes over from CASMS for good. A checklist.
 
 **Questions and answers**
 
+- [Tell Don about a problem](#tell-don-about-a-problem): Send Don a problem report from Help. It includes the details he needs to work out what went wrong.
 - [Questions and answers](#questions-and-answers): Quick answers to common questions, with links to the full how-to.
 
 ---
@@ -563,11 +566,24 @@ For the whole dojo, see the **Monthly attendance** and **Not seen lately** [repo
 
 ![Gradings](images/gradings.webp)
 
-3. Under **Add students**, tick who's grading. Students are listed by **classes since their last grading**, most first, so the ones who are due are at the top. Use **All groups** to show just Kinda Kids, Juniors or Adults. The second box changes the order: **Name**, **Rank** or **Youngest first**.
+3. Under **Add students**, tick who's grading. Everyone is listed with their belt and how many **classes since their last grading**, most first, so the ones who are due are at the top.
+   - Type a name or number in the search box to find someone.
+   - Choose a group, a belt, or a number of classes (such as **20+ classes since grading**) to show just those students.
+   - Click a column heading (**Name**, **Age**, **Rank** and so on) to sort by it. Click again to reverse.
+   - The box at the top of the tick column ticks everyone shown. For example, choose **Yellow** and tick the top box to tick every yellow belt.
+   - Ticks stay when you search or change the filters, so you can tick some yellow belts, then some orange belts, then add them all at once.
 
 ![Ticking who's grading](images/grading-add.webp)
 
-4. Click **Add ticked students to the sheet**.
+4. Click **Add 12 ticked students to the sheet** (the button counts how many are ticked).
+
+You can also tick students on the **Students** page and choose **Add them to a grading day**.
+
+### Print the sheet for the floor
+
+Click **Print sheet** on the grading sheet, then **Print**. Each belt is grouped together, lowest first, with a **Pass** and **Not yet** box and room for notes. Tick it by hand on the day and click the results in afterwards.
+
+![The printed grading sheet](images/grading-print.webp)
 
 ### On the day: one click each
 
@@ -578,6 +594,23 @@ For the whole dojo, see the **Monthly attendance** and **Not seen lately** [repo
 - **Medal** and **notes** are optional, for anyone who needs a comment.
 - Click **Student**, **Now**, **New rank** or **Result** at the top of the sheet to sort it, for example by rank so each belt grades together. Click again to reverse.
 - If everyone left has passed, click **Pass everyone still to do**.
+
+### Example: 35 students grading, 30 pass
+
+**The week before**
+
+1. Click **Gradings**, choose the date, type *December grading* and click **Create grading sheet**.
+2. Tick the 35 students who are grading and click **Add 35 ticked students to the sheet**. Each one shows their belt now and their next belt.
+3. If anyone is skipping a belt, change their **new rank** now. Everyone else is already right.
+
+**On the day**
+
+4. As each student finishes, or all at the end, click **Not yet** for the 5 who didn't pass.
+5. Click **Pass everyone still to do (30)** at the top of the sheet. The button changes to **Pass all 30? Click again**. Click it again within a few seconds.
+
+That's it. All 30 now have their new belt, it's in each student's grading history, and their "classes since last grading" count starts again from zero. The 5 keep their belt, and the sheet remembers they didn't pass yet.
+
+If you passed someone by mistake, click **Passed ✓** on their line and they go back to their old belt.
 
 ### Made a mistake?
 
@@ -914,9 +947,116 @@ Logins, passwords and the recovery code all move with the data. There's nothing 
 
 [↑ Contents](#contents)
 
+### Update from CASMS
+
+While the old CASMS program is still being used at the door, Kenshin Meibo can bring across what has changed in it: new students, changed details, new check-ins and new classes. CASMS is only read. Nothing in it is ever changed.
+
+### Bring across the latest
+
+1. Go to **Settings → CASMS**.
+2. The CASMS folder is filled in already (the one the data first came from). If CASMS has moved, type the new folder or click **Browse…**.
+3. Click **Check for changes**. Nothing is changed yet. It shows what it found: new students, students with changes (and what changed), and new check-ins.
+
+   ![Changes found in CASMS](images/settings-casms.webp)
+
+4. If it looks right, click **Update Kenshin Meibo now**, then **OK**. It backs up first, then brings the changes in.
+
+Do this as often as you like. If nothing has changed it says **Already up to date**.
+
+### Let it update by itself
+
+Tick **Update by itself** under **Automatically**. From then on, whenever CASMS changes (a check-in, a new student, a changed phone number), Kenshin Meibo waits until CASMS has been quiet for a minute and brings the changes in. It also checks once an hour, and about a minute after logging in.
+
+Today shows when it last updated, for example **Updated from CASMS today 5:42 pm**. If something stops it working, that line turns red and says why. Click it to see more.
+
+It only updates while Kenshin Meibo is logged in, and it backs up first (at most every few hours).
+
+### What wins
+
+CASMS does. If a phone number or address was changed in CASMS, that replaces what's in Kenshin Meibo.
+
+These are kept, and never replaced:
+
+- logins, settings and backups
+- notes and gradings added in Kenshin Meibo
+- students added in Kenshin Meibo (they're listed under **Left alone** if CASMS has someone with the same number)
+- students who have been taken out of CASMS (listed under **Not in CASMS any more**)
+
+### While both programs are in use
+
+Students should only check in one place. Until Kenshin Meibo takes over, set the **Check-in screen** to **Off** in [Settings → Screens](#choose-which-screen-does-what), so it doesn't open on the touch screen.
+
+Gradings work the same way. Enter them in CASMS. A grading entered in Kenshin Meibo stays in the student's history, but the next update sets their belt back to what CASMS says until CASMS has it too.
+
+If it says CASMS may have been saving, click **Check for changes** again a few seconds later.
+
+### When you stop using CASMS
+
+See [Switching over from CASMS](#switching-over-from-casms).
+
+[↑ Contents](#contents)
+
+### Switching over from CASMS
+
+While both programs are in use, CASMS is the main register and Kenshin Meibo copies from it (see [Update from CASMS](#update-from-casms)). When you're ready to stop using CASMS, switch over. It's one button, and it can't be switched back.
+
+![Switch to Kenshin Meibo](images/switch-over.webp)
+
+### Before the day
+
+- Make sure backups are set up in **Settings → Backups**. The switch won't start without them.
+- Pick a time when nobody is checking in, such as before the first class.
+
+### On the day
+
+1. **Close CASMS.** From now on nothing should be typed into it.
+2. In Kenshin Meibo, go to **Settings → CASMS**.
+3. Click **Switch to Kenshin Meibo…**, then **OK**.
+
+   It brings in the last changes from CASMS, makes a backup marked "switch-over", stops all updates from CASMS, and turns the check-in screen on.
+4. **Check in one student** on the touch screen, and see them appear on **Today**.
+5. Look up two or three students you know well, and check their details and belts look right.
+
+That's it. Kenshin Meibo is now the register, and everything changed in it is kept.
+
+If the check-in screen doesn't come on (for example only one screen is plugged in), choose it in [Settings → Screens](#choose-which-screen-does-what).
+
+### Afterwards
+
+- Leave the CASMS folder where it is. Don't delete it; it's the old record.
+- Each student's **Original record** tab still shows what CASMS had.
+
+### Switched by mistake?
+
+Restore the backup marked "switch-over" from **Settings → Backups** (see [Get data back from a backup](#get-data-back-from-a-backup)), or ask Don.
+
+[↑ Contents](#contents)
+
 ---
 
 ## Questions and answers
+
+### Tell Don about a problem
+
+If something goes wrong or doesn't look right, send Don a problem report. It saves describing it over the phone, and it includes the technical details he needs.
+
+1. Click **Help** in the menu, then **Something wrong? Tell Don** at the top.
+2. Under **What happened?**, say what you were doing and what went wrong. Copy any message that came up. If it's about one student, put their name or number in the second box.
+
+   ![Sending a problem report](images/problem-report.webp)
+
+3. Click **Send**.
+4. Click **Start the email to Don**. Your email program opens with Don's address and what you typed filled in.
+5. Click **Show the report file** and drag the file into the email (or use the paperclip to attach it). Then send the email.
+
+If your email program doesn't open, for example if you use email in a web browser, write a new email to Don, attach the file and mention the report number.
+
+### What gets sent where
+
+- **On GitHub** (where Don keeps track of fixes): only technical details, such as the version, settings and recent error messages. Anyone could see these, so names, phone numbers, emails and what you typed are taken out first. Click **See exactly what goes on GitHub** to check before sending.
+- **The report file** you email to Don has everything, including what you typed. It's saved in **Documents → Kenshin Meibo problem reports**.
+
+[↑ Contents](#contents)
 
 ### Questions and answers
 
@@ -967,6 +1107,9 @@ Yes: **Settings → Backups → Restore from a backup**. See [Get data back from
 
 #### Can it run on two computers at once?
 No. One PC runs it, with a main screen and a touch screen. To move it, see [Moving to a new PC](#moving-to-a-new-pc).
+
+#### Do belts go up by themselves after a grading?
+Yes. On the grading sheet, each student's next belt is filled in already. Click **Pass** and their belt changes there and then, and it's added to their history. If most of the class passed, click **Not yet** for the ones who didn't, then **Pass everyone still to do**. See [Grading day](#grading-day).
 
 #### Where's the old CASMS information?
 All of it came across. Every student keeps their number, and each student's **Original record** tab shows what CASMS had. See [Attendance and history](#attendance-and-history).
